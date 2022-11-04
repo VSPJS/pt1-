@@ -1,0 +1,28 @@
+<mat-card>
+<mat-action-list>
+<div mat-subheader>Home</div>
+
+<button mat-list-item routerLink="/user/home">
+<mat-icon mat-list-icon>home</mat-icon>Home</button>
+
+<!--<button mat-list-item routerLink="/user/profile">
+<mat-icon mat-list-icon>account_circle</mat-icon>Profile</button>
+
+<button mat-list-item routerLink="/user/today-tasks">
+<mat-icon mat-list-icon>folder</mat-icon>Today's Task Lists</button>-->
+
+
+<button mat-list-item routerLink="/user/lists">
+<mat-icon mat-list-icon>folder</mat-icon>All Task Lists</button>
+
+
+<button mat-list-item routerLink="/user/completed-tasks">
+<mat-icon mat-list-icon>folder</mat-icon>Completed Task Lists</button>
+
+<button mat-list-item routerLink="/user/incompleted-tasks">
+<mat-icon mat-list-icon>folder</mat-icon>Incompleted Task Lists</button>
+
+<button mat-list-item (click)="logout()">
+<mat-icon mat-list-icon>logout</mat-icon>Logout</button>
+</mat-action-list>
+</mat-card>

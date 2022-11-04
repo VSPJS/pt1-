@@ -1,0 +1,13 @@
+<mat-card>
+<h1 class="head">Update List</h1><hr><br>
+<mat-form-field class="example-full-width" appearance="fill">
+<mat-label>List Name</mat-label>
+<input type="text"  name="title" matInput placeholder="Ex.enter list name...." #listTitleInput required>
+</mat-form-field>
+
+<div class="btns">
+<button mat-flat-button color="accent" class="btn1"(click)="updateList(listTitleInput.value)" >upadte</button>
+<button mat-flat-button color="warn" class="btn2" routerLink="/user/lists">cancel</button>
+</div>
+
+</mat-card>

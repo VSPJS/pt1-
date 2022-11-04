@@ -1,0 +1,7 @@
+<mat-toolbar color="accent">
+<button mat-flat-button class="example-icon"[routerLink]="'/user/home'" color="accent">Home</button>
+<button mat-flat-button class="login" *ngIf="!isLoggedIn"  [routerLink]="'/'" color="primary">Login</button>
+<button mat-flat-button class="signup" *ngIf="!isLoggedIn" [routerLink]="'/signup'" color="warn">Signup</button>
+<!--<button mat-flat-button class="user" *ngIf="isLoggedIn"  color="primary" >{{user}}</button>
+<button mat-flat-button class="logout" *ngIf="isLoggedIn" (click)="logout()" color="warn">Logout</button>-->
+</mat-toolbar>

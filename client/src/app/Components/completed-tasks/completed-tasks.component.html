@@ -1,0 +1,51 @@
+<mat-drawer-container class="example-container">
+<!--Lists components-->
+<mat-drawer mode="side" opened>
+<h1 class="head">Lists</h1>
+<mat-action-list *ngFor="let list of lists;">
+<button mat-list-item [routerLink]="['/user/completed-tasks', list._id]" routerLinkActive="is-active" class="btn3">
+<mat-icon mat-list-icon>folder</mat-icon>{{list.title}}</button>
+</mat-action-list>
+<!--<button mat-flat-button color="primary" (click)="openDialog()" class="btn2" routerLink="user/new-list">+ New List</button>-->
+</mat-drawer>
+
+<!--Tasks components-->
+<mat-card>
+<button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" class="btn1">
+<mat-icon>settings</mat-icon></button>
+<mat-menu #menu="matMenu">
+<button mat-menu-item [routerLink]="['/user/edit-list', selectedListId]"><mat-icon>update</mat-icon><span>Update List</span></button>
+<button mat-menu-item (click)="onDeleteListClick()"><mat-icon >delete</mat-icon><span>Delete List</span></button>
+</mat-menu>
+<div *ngIf="tasks"><hr>
+<h1 class="hed">Completed Tasks</h1>
+<!--<button mat-flat-button color="primary" class="bt" routerLink="./new-task">Add Task</button><hr>-->
+<div class="task" *ngFor="let task of tasks" >
+
+<mat-card class="tasks">
+
+<button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" class="menu">
+<mat-icon>more_vert</mat-icon></button>
+<mat-menu #menu="matMenu" yPosition="below">
+<button mat-menu-item [routerLink]="['/user/lists', selectedListId, 'edit-task', task._id]"><mat-icon>update</mat-icon><span>Update Task</span></button>
+<button mat-menu-item (click)="onDeleteTaskClick(task._id)"><mat-icon>delete</mat-icon><span>Delete Task</span></button>
+</mat-menu>
+
+<div class="task-text" (click)="onTaskClick(task)" [ngClass]="{ 'completed': task.completed }">
+<b>Task Name: </b><p >{{task.title}}</p>
+<b>Note: </b><p>{{task.note}}</p>
+<b>Date: </b><p>{{task.date}}</p>
+</div>
+<h4 (click)="onTaskClick(task)" [ngClass]="{ 'completed': task.completed }" *ngIf="task.completed" class="comp1">******************************** Task is completed ********************************</h4>
+<h4 (click)="onTaskClick(task)" [ngClass]="{ 'completed': task.completed }" *ngIf="!task.completed" class="comp2">******************************** Task is Incompleted ********************************</h4>
+</mat-card>
+</div>
+<h3 class="empty-state-text" *ngIf="tasks.length === 0">There are no completed tasks in here!</h3>
+</div>
+
+<div *ngIf="!tasks">
+<h3 class="empty-state-text">Please select a list from the sidebar</h3>
+</div>
+</mat-card>
+
+</mat-drawer-container>

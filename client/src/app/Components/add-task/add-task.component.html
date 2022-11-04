@@ -1,0 +1,31 @@
+<mat-card>
+<h1 class="head">Add New Task</h1><hr><br>
+
+<mat-form-field class="example-full-width" appearance="fill">
+<mat-label>Task Title</mat-label>
+<input type="text"  name="fname" matInput placeholder="Ex.enter task title...." #taskTitleInput required>
+</mat-form-field>
+
+<mat-form-field class="example-full-width" appearance="fill">
+<mat-label>Task Note</mat-label>
+<input type="text"  name="fname" matInput placeholder="Ex.enter task note...." #noteInput required>
+</mat-form-field>
+<br>
+<!--<mat-form-field color="accent" class="example-full-width" appearance="fill">
+<mat-label>Task Date</mat-label>
+<input type="date"  name="fname" matInput placeholder="Ex.enter task date...." #dateInput  required>
+</mat-form-field>-->
+<mat-form-field class="example-full-width1" appearance="fill">
+<label>
+<input  matInput name="date" [matDatepicker]="picker" placeholder="Choose a date" format="dd-MM-yyyy" ngModel #dateInput="ngModel" maxlength="10">
+</label>
+<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+<mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+
+<div class="btns">
+<button mat-flat-button color="accent" class="btn1" (click)="createTask(taskTitleInput.value,noteInput.value,dateInput.value)" >Add Task</button>
+<button mat-flat-button color="warn" class="btn2" routerLink="/user/lists">cancel</button>
+</div>
+
+</mat-card>

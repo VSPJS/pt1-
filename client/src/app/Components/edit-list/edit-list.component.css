@@ -1,0 +1,27 @@
+mat-card
+{
+width: 1070px;
+height: 550px;
+margin-top: 10px;
+margin-left: 30px;
+}
+.head
+{
+text-align: center;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-size: 30px;
+}
+.example-full-width
+{
+width: 100%;
+}
+.btn1,.btn2
+{
+width: 90px;
+margin-left: 10px;
+}
+.btns
+{
+margin-left: 22rem;
+margin-top: 50px;
+}

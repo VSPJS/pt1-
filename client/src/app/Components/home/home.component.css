@@ -1,0 +1,13 @@
+mat-card
+{
+margin-left: 40px;
+margin-top: 10px;
+text-align: center;
+}
+.head
+{
+font: bolder;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-size: 200;
+
+}

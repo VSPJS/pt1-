@@ -1,0 +1,11 @@
+.mat-card
+{
+margin-top: 10px;
+width: 250px;
+height: 550px;
+}
+mat-list-item
+{
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-size: 300;
+}

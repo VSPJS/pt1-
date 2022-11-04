@@ -1,0 +1,21 @@
+mat-card
+{
+margin-top: 60px;
+width: 540px;
+height: auto;
+margin-left: 30%;
+}
+.form-group
+{
+margin-top: 20px;
+}
+.head
+{
+text-align: center;
+}
+.alert-danger
+{
+margin-top: 10px;
+height: 40px;
+text-align: center;
+}
